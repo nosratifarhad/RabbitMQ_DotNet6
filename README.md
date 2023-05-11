@@ -1,0 +1,1 @@
+# RabitMq_DotNet6
