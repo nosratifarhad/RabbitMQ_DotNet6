@@ -13,12 +13,12 @@ public class MessageProducer : IMessageProducer
 
     public void SendMessage<T>(T message)
     {
-        var factory = new ConnectionFactory
-        {
-            HostName = "http://localhost:15672/",
-            UserName = "guest",
-            Password = "guest",
-        };
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.UserName = "guest";
+        factory.Password = "guest";
+        factory.VirtualHost = "/";
+        factory.HostName = "localhost";
+        factory.Port = AmqpTcpEndpoint.UseDefaultPort;
 
         var connection = factory.CreateConnection();
         using var channel = connection.CreateModel();
