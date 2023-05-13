@@ -23,4 +23,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ReceiveRabbitMQApplication\ReceiveRabbitMQApplication.csproj" />
+  </ItemGroup>
+
 </Project>
