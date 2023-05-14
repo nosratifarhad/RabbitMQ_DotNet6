@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ReceiveRabbitMQConsoleApp;
-using System;
-using System.ComponentModel;
-using static System.Formats.Asn1.AsnWriter;
+using RabbitMQ.Client;
+using ReceiveRabbitMQConsoleApp.MessageBrokerReceiver;
+using ReceiveRabbitMQConsoleApp.MessageBrokerReceiver.Contracts;
 
 public class Program
 {
@@ -23,6 +22,8 @@ public class Program
             .ConfigureServices(async (hostContext, services) =>
             {
                 #region AddServices
+                
+                services.AddScoped<ConnectionFactory>();
 
                 services.AddTransient<IReceivedProducer, ReceivedProducer>();
                 
