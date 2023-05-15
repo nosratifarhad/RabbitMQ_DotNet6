@@ -6,15 +6,9 @@ using ReceiveRabbitMQConsoleApp.MessageBrokerReceiver.Contracts;
 
 public class Program
 {
-    private static IServiceProvider serviceProvider;
-
     public static void Main(string[] args)
     {
-        var host = CreateHostBuilder(args);
-
-        //ConfigureServices();
-
-        host.Build().Run();
+        CreateHostBuilder(args).Build().Run();
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,25 +16,20 @@ public class Program
             .ConfigureServices(async (hostContext, services) =>
             {
                 #region AddServices
-                
+
                 services.AddScoped<ConnectionFactory>();
 
                 services.AddTransient<IReceivedProducer, ReceivedProducer>();
-                
-                var receivedProducer =
-                services.BuildServiceProvider().GetService<IReceivedProducer>();
 
-                Task.Run(async () => await receivedProducer.ReceivedMessageProducer());
+                var receivedProducer =
+                services.BuildServiceProvider()
+                .GetService<IReceivedProducer>();
+
+                await Task.Run(
+                     async
+                     ()
+                     => await receivedProducer.ReceivedMessageProducer());
 
                 #endregion AddServices
             });
-
-
-    //private static void ConfigureServices()
-    //{
-    //    var services = new ServiceCollection();
-
-
-    //}
-
 }
