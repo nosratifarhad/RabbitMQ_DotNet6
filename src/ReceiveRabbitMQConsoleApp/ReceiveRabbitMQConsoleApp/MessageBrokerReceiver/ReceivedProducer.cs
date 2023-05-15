@@ -18,6 +18,7 @@ public class ReceivedProducer : IReceivedProducer
         _factory = factory;
         _factory.Port = AmqpTcpEndpoint.UseDefaultPort;
     }
+
     #endregion Ctor
 
     #region Methods
@@ -39,7 +40,6 @@ public class ReceivedProducer : IReceivedProducer
                 var message = Encoding.UTF8.GetString(body);
 
                 Console.BackgroundColor = ConsoleColor.Blue;
-
                 Console.WriteLine("Product message received: {0}", message);
             };
 
