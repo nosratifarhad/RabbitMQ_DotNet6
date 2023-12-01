@@ -28,6 +28,7 @@ public class ReceivedProducer : IReceivedProducer
         try
         {
             var connection = _factory.CreateConnection();
+
             using var channel = connection.CreateModel();
 
             channel.QueueDeclare("product", exclusive: false);

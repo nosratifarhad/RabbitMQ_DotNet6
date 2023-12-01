@@ -1,7 +1,7 @@
 ﻿using RabbitMQApplication.Domain;
 using RabbitMQApplication.Domain.Entitys;
 
-namespace RabbitMQApplication.Infra.Repositories.WriteRepositories.ProductWriteRepositories
+namespace RabbitMQApplication.Infrastructure.Repositories.WriteRepositories.ProductWriteRepositories
 {
     public class ProductWriteRepository : IProductWriteRepository
     {
@@ -15,7 +15,7 @@ namespace RabbitMQApplication.Infra.Repositories.WriteRepositories.ProductWriteR
         {
             await Task.Delay(1000);
         }
-         
+
         public async Task UpdateProductAsync(Product product)
         {
             await Task.Delay(1000);

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQApplication", "RabbitMQApplication\RabbitMQApplication.csproj", "{CA7B3CC2-5BC0-4714-9CCD-3F2A89F32EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQApplication", "RabbitMQApplication.csproj", "{CA7B3CC2-5BC0-4714-9CCD-3F2A89F32EBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
