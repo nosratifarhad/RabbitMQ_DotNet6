@@ -1,7 +1,7 @@
 using RabbitMQ.Client;
 using RabbitMQApplication.Domain;
-using RabbitMQApplication.Infra.Repositories.ReadRepositories.ProductReadRepositories;
-using RabbitMQApplication.Infra.Repositories.WriteRepositories.ProductWriteRepositories;
+using RabbitMQApplication.Infrastructure.Repositories.ReadRepositories.ProductReadRepositories;
+using RabbitMQApplication.Infrastructure.Repositories.WriteRepositories.ProductWriteRepositories;
 using RabbitMQApplication.MessageBrokerServices;
 using RabbitMQApplication.MessageBrokerServices.Contracts;
 using RabbitMQApplication.Services;
@@ -13,7 +13,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 #region Dependency Injection
 
 builder.Services.AddScoped<ConnectionFactory>();
@@ -24,7 +23,6 @@ builder.Services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
 builder.Services.AddScoped<IProductReadRepository, ProductReadRepository>();
 
 #endregion Dependency Injection
-
 
 var app = builder.Build();
 

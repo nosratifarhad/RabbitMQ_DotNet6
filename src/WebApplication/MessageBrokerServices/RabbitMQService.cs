@@ -20,6 +20,7 @@ public class RabbitMQService : IRabbitMQService
     #endregion Ctor
 
     #region Methods
+
     public void PublishMessage<T>(T message)
     {
         try
@@ -38,15 +39,10 @@ public class RabbitMQService : IRabbitMQService
             throw new Exception(ex.Message);
         }
     }
+
     #endregion Methods
 
     #region Dispose
-
-    ~RabbitMQService()
-    {
-        //Console.WriteLine("~ : {0}", Thread.CurrentThread.ManagedThreadId);
-        GC.SuppressFinalize(this);
-    }
 
     public void Dispose()
     {

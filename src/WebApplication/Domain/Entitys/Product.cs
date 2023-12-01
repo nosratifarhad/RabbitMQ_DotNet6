@@ -28,6 +28,11 @@ public class Product
 
     #region Ctor
 
+    public Product()
+    {
+
+    }
+
     public Product(
         string productName,
         string productTitle,
